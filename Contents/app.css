@@ -1,0 +1,40 @@
+/* Author Name: Anirudh Babu
+   File Name: app.css
+   Website content: 
+   File Description: Custom CSS for about me, contact and project pages
+*/
+body{
+    background-color: #F7E8DF;
+    text-align: left;
+}
+#photoSlides{
+    max-width: 400px;
+    float: right;
+}
+.navbar-custom {
+    background-color: #79DFDD;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text{
+    color:#915431;
+}
+.navbar-custom .navbar-nav .nav-link {
+    color: #915431;
+    font-size: 1.5em;
+}
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #DE9D78;
+}
+h5{
+    background-color: #79DFDD;
+    color:#915431;
+    line-height: 50px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+figure{
+    max-width: 200px;
+    width: 30%;
+    float: right;
+}

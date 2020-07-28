@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contact</title>
+      <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+      <link rel="stylesheet" href="./Contents/app.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">
+          <img src="Assets/logo.png" width="60" height="76" class="d-inline-block align-top" alt="logo" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"><i class="fas fa-house-user"></i> About Me <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="contact.html"><i class="fas fa-id-card"></i> Contact </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html"><i class="fas fa-tasks"></i> Projects </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+          <h1 class="display-4"></h1>
+          <hr>
+          <form action="index.html" id="contactForm">
+            <div class="form-group">
+              <label for="firstName"></label>
+              <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="firstName"
+              placeholder="" required autofocus>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName"></label>
+              <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastName"
+              placeholder="" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactNumber"></label>
+              <input type="tel" class="form-control" id="contactNumber" name="contactNumber" aria-describedby="contactNumber"
+              placeholder="" required>
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddress"></label>
+              <input type="email" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="emailAddress"
+              placeholder="" required>
+            </div>
+
+            <div class="form-group">
+              <label for="shortMessage"></label>
+              <textarea class="form-control" id="shortMessage"  name="shortMessage" rows="3" aria-describedby="shortMessage" placeholder=""></textarea>
+            </div>
+
+            <button id="submitButton" type="submit" class="btn btn-primary btn-lg"></button>
+            <button id="resetButton" type="reset" class="btn btn-warning btn-lg"></button>
+            <br><br>
+          </form>  
+
+      </div>
+  </main>
+    <footer>
+      <h5></h5>
+    </footer>
+    <script src="./node_modules/popper.js/dist/popper.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/js/dist/util.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>   
+    <script src="./Scripts/app.js"></script>
+  </body>
+</html>
