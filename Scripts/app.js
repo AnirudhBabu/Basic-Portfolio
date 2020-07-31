@@ -103,27 +103,6 @@
                 let contactContent = XHR.response.Contact;
 
                 //sets values from the read JSON appropriately
-                
-                /* let i = 0;
-                let j = 0;
-                for (const field in contactContent) {
-                    if(i === 0){
-                        ++i;
-                        continue;
-                    }
-                    if(i === 11){
-                        break;
-                    }
-                    console.log(field);
-                    if (contactContent.hasOwnProperty(field) && i % 2 != 0) {
-                        document.getElementsByTagName("label")[j].innerText = contactContent[field];
-                        j % 4 != 0 ? ++j: ;                        
-                    }
-                    else{
-                        document.getElementsByTagName("input")[i].setAttribute("placeholder", contactContent[field]);
-                    }
-                    ++i;                    
-                }  */
                 document.getElementsByTagName("h1")[0].innerText = contactContent.heading;
                 document.getElementsByTagName("label")[0].innerText = contactContent.firstNameLabel;
                 document.getElementsByTagName("input")[0].setAttribute("placeholder", contactContent.firstNamePlaceholder);
