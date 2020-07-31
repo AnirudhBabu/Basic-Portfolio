@@ -26,15 +26,17 @@ body{
 .navbar-custom .nav-item:hover .nav-link {
     color: #DE9D78;
 }
-h5{
-    background-color: #79DFDD;
+.navbar h5{
     color:#915431;
     line-height: 50px;
     padding-left: 10px;
-    font-weight: bold;
+    font-weight: bold;    
 }
 figure{
     max-width: 200px;
     width: 30%;
     float: right;
+}
+main{
+    margin-bottom: 55px;
 }

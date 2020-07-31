@@ -1,0 +1,17 @@
+{
+    "AboutMe":
+    {
+        "heading": "About me",
+        "introText": "I am a high school graduate aspiring to be a software engineer who enjoys coding. At Centennial, I am a student of the Software Engineering Technician Program. My interests include reading, watching Youtube and listening music.",
+        "missionHeading": "Mission Statement",
+        "missionStatement": "Strive to be a good software engineer who never stops learning and spreading knowledge",
+        "hobbiesHeading": "Hobbies",
+        "hobbies": "<li><i class=\"fa-li fab fa-github-alt\"></i> 3D Origami</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Reading</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Watching LinkedIn Learning</li>",
+        "interestsHeading": "Interests",
+        "interests": "<li><i class=\"fa-li fab fa-github-alt\"></i> Networking</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Data Science</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Programming</li>"
+    },
+    "Contact":
+    {
+
+    }
+}

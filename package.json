@@ -1,7 +1,7 @@
 {
-  "name": "assignment2",
+  "name": "assignment3",
   "version": "1.0.0",
-  "description": "assignment 2 works",
+  "description": "assignment 3 works",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {

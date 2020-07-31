@@ -1,32 +1,87 @@
 /* Author: Anirudh Babu
-   Date  : 28/06/2020
+   Student no.: 301105250
+   Date  : 27/07/2020
+   Website name: index.html
    Description: This script injects all text seen on the html page
 */
+"use strict";
 (function(){
-    let title = document.querySelector("title").innerText;
-    function AboutMeText()
+    function highlightActiveLink() 
     {
-        let pString = 
-        `I am a high school graduate aspiring to be a software engineer who enjoys coding.
-         At Centennial, I am a student of the Software Engineering Technician Program. My 
-         interests include reading, watching Youtube and listening music. `;
-        let missionStatement =
-        `   Strive to be a good software engineer who never stops learning and spreading knowledge`;
-        document.getElementsByTagName("h1")[0].innerText = "About me";
-        document.getElementsByTagName("h2")[0].innerText = "Mission Statement";
-        document.getElementsByTagName("p")[0].innerText = pString;
-        document.getElementsByTagName("blockquote")[0].innerText = missionStatement;
-        document.getElementsByTagName("h2")[1].innerText = "Hobbies";
-        document.getElementsByClassName("fa-ul")[0].innerHTML = 
-        `<li><i class="fa-li fab fa-github-alt"></i> 3D Origami</li>
-        <li><i class="fa-li fab fa-github-alt"></i> Reading</li>
-        <li><i class="fa-li fab fa-github-alt"></i> Watching LinkedIn Learning</li>`;
-        document.getElementsByTagName("h2")[2].innerText = "Interests";
-        document.getElementsByClassName("fa-ul")[1].innerHTML = 
-        `<li><i class="fa-li fab fa-github-alt"></i> Networking</li>
-        <li><i class="fa-li fab fa-github-alt"></i> Data Science</li>
-        <li><i class="fa-li fab fa-github-alt"></i> Programming</li>`;
-        document.getElementsByTagName("h5")[0].innerHTML = "&copy; Copyright 2020 - Anirudh Babu - Centennial College";       
+        let navAnchors = document.querySelectorAll("li a");
+        
+        for (const anchor of navAnchors) 
+        {
+            console.log(document.title);
+            if(document.title === "About me")
+            { 
+                if(anchor.getAttribute("href") === "index.html")
+                {
+                    anchor.parentElement.className = "nav-item active";
+                }                
+            }
+            else
+            {
+                let toBeCompared = document.title.toLowerCase() + ".html";
+                if(anchor.getAttribute("href") === toBeCompared)
+                {
+                    anchor.parentElement.className = "nav-item active";
+                }
+            }
+        }        
+    }
+    
+    function setContent()
+    {
+        highlightActiveLink();
+        switch (document.title) {
+            case "About me":
+                AboutMeContent();
+                break;
+            case "Contact":
+                ContactText();
+                break;
+            case "Projects":
+                ProjectsText();
+                break;
+            default:
+                break;
+        }
+        loadFooter();
+
+    }
+    function AboutMeContent()
+    {
+        // step 1 - creates the XHR object
+        let XHR = new XMLHttpRequest();
+
+        // step 2 - sets the type of the message to be read as JSON
+        XHR.responseType = 'json';
+
+        // step 3 - configures the message
+        XHR.open("GET", "./Scripts/paragraphs.json");
+
+        // step 4 - Executes the request
+        XHR.send();
+
+        XHR.addEventListener("readystatechange", function(){
+            if((XHR.readyState === 4) && (XHR.status === 200))
+            {
+                //stores the JSON content of the AboutMe object
+                let aboutMeContent = XHR.response.AboutMe;
+
+                //sets values from the read JSON appropriately
+                document.getElementsByTagName("h1")[0].innerText = aboutMeContent.heading;
+                document.getElementsByTagName("h2")[0].innerText = aboutMeContent.missionHeading;
+                document.getElementsByTagName("p")[0].innerText = aboutMeContent.introText;
+                document.getElementsByTagName("blockquote")[0].innerText = aboutMeContent.missionStatement;
+                document.getElementsByTagName("h2")[1].innerText = aboutMeContent.hobbiesHeading;
+                document.getElementsByClassName("fa-ul")[0].innerHTML = aboutMeContent.hobbies;
+                document.getElementsByTagName("h2")[2].innerText = aboutMeContent.interestsHeading;
+                document.getElementsByClassName("fa-ul")[1].innerHTML = aboutMeContent.interests;
+            }
+        });
+        
     }
     function ContactText()
     {
@@ -67,24 +122,60 @@
         document.getElementsByTagName("p")[2].innerText = project3String;
         document.getElementsByTagName("h5")[0].innerHTML = "&copy; Copyright 2020 - Anirudh Babu - Centennial College"; 
     }
-    switch (title) {
-        case "About me":
-            window.addEventListener("load", AboutMeText);
-            break;
-        case "Contact":
-            window.addEventListener("load", ContactText);
-            break;
-        case "Projects":
-            window.addEventListener("load", ProjectsText);
-            break;
-        default:
-            break;
+    function loadHeader()
+    {
+        console.info("Header is on the way...");
+
+        // step 1 - creates the XHR object
+        let XHR = new XMLHttpRequest();
+
+        // step 2 - configures the message
+        XHR.open("GET", "./Views/partials/header.html");
+
+        // step 3 - Executes the request
+        XHR.send();
+
+        XHR.addEventListener("readystatechange", function(){
+            if((XHR.readyState === 4) && (XHR.status === 200))
+            {
+                let header = document.getElementsByTagName("header")[0];
+
+                let headerData = XHR.responseText;
+
+                header.innerHTML = headerData;
+                
+                setContent();
+            }
+        });
     }
-    
-    /*$(function () {
-        $('[data-toggle="popover"]').popover()
-      })*/
+    function loadFooter()
+    {
+        console.info("Footer is on the way...");
 
+        // step 1 - creates the XHR object
+        let XHR = new XMLHttpRequest();
 
+        // step 2 - configures the message
+        XHR.open("GET", "./Views/partials/footer.html");
+
+        // step 3 - Executes the request
+        XHR.send();
+
+        XHR.addEventListener("readystatechange", function(){
+            if((XHR.readyState === 4) && (XHR.status === 200))
+            {
+                let footer = document.getElementsByTagName("footer")[0];
+                
+                let footerData = XHR.responseText;
+
+                footer.innerHTML = footerData;
+            }
+        });
+    }
+    function Start()
+    {
+        loadHeader();
+    }
+    window.addEventListener("load", Start);
 
 })();
