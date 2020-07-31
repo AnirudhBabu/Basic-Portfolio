@@ -12,7 +12,6 @@
         
         for (const anchor of navAnchors) 
         {
-            console.log(document.title);
             if(document.title === "About me")
             { 
                 if(anchor.getAttribute("href") === "index.html")
@@ -39,7 +38,7 @@
                 AboutMeContent();
                 break;
             case "Contact":
-                ContactText();
+                ContactContent();
                 break;
             case "Projects":
                 ProjectsText();
@@ -83,22 +82,64 @@
         });
         
     }
-    function ContactText()
+    function ContactContent()
     {
-        document.getElementsByTagName("h1")[0].innerText = "Contact Us";
-        document.getElementsByTagName("label")[0].innerText = "First Name";
-        document.getElementsByTagName("input")[0].setAttribute("placeholder", "Enter your First name");
-        document.getElementsByTagName("label")[1].innerText = "Last Name";
-        document.getElementsByTagName("input")[1].setAttribute("placeholder", "Enter your Last name");
-        document.getElementsByTagName("label")[2].innerText = "Contact Number";
-        document.getElementsByTagName("input")[2].setAttribute("placeholder", "Enter your Contact Number");
-        document.getElementsByTagName("label")[3].innerText = "Email address";
-        document.getElementsByTagName("input")[3].setAttribute("placeholder", "Enter your email address");
-        document.getElementsByTagName("label")[4].innerText = "Your Message";
-        document.getElementsByTagName("textarea")[0].setAttribute("placeholder", "Type in anything you would like to let me know...");
-        document.getElementsByTagName("button")[1].innerHTML = "<i class=\"fas fa-envelope-square\"></i> Send";
-        document.getElementsByTagName("button")[2].innerHTML = "<i class=\"fas fa-comment-slash\"></i> Reset";
-        document.getElementsByTagName("h5")[0].innerHTML = "&copy; Copyright 2020 - Anirudh Babu - Centennial College"; 
+        // step 1 - creates the XHR object
+        let XHR = new XMLHttpRequest();
+
+        // step 2 - sets the type of the message to be read as JSON
+        XHR.responseType = 'json';
+
+        // step 3 - configures the message
+        XHR.open("GET", "./Scripts/paragraphs.json");
+
+        // step 4 - Executes the request
+        XHR.send();
+
+        XHR.addEventListener("readystatechange", function(){
+            if((XHR.readyState === 4) && (XHR.status === 200))
+            {
+                //stores the JSON content of the AboutMe object
+                let contactContent = XHR.response.Contact;
+
+                //sets values from the read JSON appropriately
+                
+                /* let i = 0;
+                let j = 0;
+                for (const field in contactContent) {
+                    if(i === 0){
+                        ++i;
+                        continue;
+                    }
+                    if(i === 11){
+                        break;
+                    }
+                    console.log(field);
+                    if (contactContent.hasOwnProperty(field) && i % 2 != 0) {
+                        document.getElementsByTagName("label")[j].innerText = contactContent[field];
+                        j % 4 != 0 ? ++j: ;                        
+                    }
+                    else{
+                        document.getElementsByTagName("input")[i].setAttribute("placeholder", contactContent[field]);
+                    }
+                    ++i;                    
+                }  */
+                document.getElementsByTagName("h1")[0].innerText = contactContent.heading;
+                document.getElementsByTagName("label")[0].innerText = contactContent.firstNameLabel;
+                document.getElementsByTagName("input")[0].setAttribute("placeholder", contactContent.firstNamePlaceholder);
+                document.getElementsByTagName("label")[1].innerText = contactContent.lastNameLabel;
+                document.getElementsByTagName("input")[1].setAttribute("placeholder", contactContent.lastNamePlaceholder);
+                document.getElementsByTagName("label")[2].innerText = contactContent.contactNumLabel;
+                document.getElementsByTagName("input")[2].setAttribute("placeholder", contactContent.contactNumPlaceholder);
+                document.getElementsByTagName("label")[3].innerText = contactContent.emailAddressLabel;
+                document.getElementsByTagName("input")[3].setAttribute("placeholder", contactContent.emailAddressPlaceholder);
+                document.getElementsByTagName("label")[4].innerText = contactContent.shortMessageLabel;
+                document.getElementsByTagName("textarea")[0].setAttribute("placeholder", contactContent.shortMessagePlaceholder);
+                document.getElementsByTagName("button")[1].innerHTML = contactContent.sendButton;
+                document.getElementsByTagName("button")[2].innerHTML = contactContent.resetButton;
+            }
+        });
+        
     }
     function ProjectsText()
     {

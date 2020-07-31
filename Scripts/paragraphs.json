@@ -12,6 +12,18 @@
     },
     "Contact":
     {
-
+        "heading": "Contact Us",
+        "firstNameLabel": "First Name",
+        "firstNamePlaceholder": "Enter your First name",
+        "lastNameLabel": "Last Name",
+        "lastNamePlaceholder": "Enter your Last name",
+        "contactNumLabel": "Contact Number",
+        "contactNumPlaceholder": "Enter your Contact Number",
+        "emailAddressLabel": "Email Address",
+        "emailAddressPlaceholder": "Enter your email address",
+        "shortMessageLabel": "Your message",
+        "shortMessagePlaceholder": "Type in anything you would like to let me know...",
+        "sendButton": "<i class=\"fas fa-envelope-square\"></i> Send",
+        "resetButton": "<i class=\"fas fa-comment-slash\"></i> Reset"
     }
 }
