@@ -38,5 +38,11 @@ figure{
     float: right;
 }
 main{
-    margin-bottom: 55px;
+    margin-bottom: 100px;
+}
+li img{
+    float: right;
+    border-width: 3px;
+    border-style: ridge;
+    border-color: indianred;
 }

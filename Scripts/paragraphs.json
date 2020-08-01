@@ -1,29 +1,39 @@
 {
-    "AboutMe":
-    {
-        "heading": "About me",
-        "introText": "I am a high school graduate aspiring to be a software engineer who enjoys coding. At Centennial, I am a student of the Software Engineering Technician Program. My interests include reading, watching Youtube and listening music.",
-        "missionHeading": "Mission Statement",
-        "missionStatement": "Strive to be a good software engineer who never stops learning and spreading knowledge",
-        "hobbiesHeading": "Hobbies",
-        "hobbies": "<li><i class=\"fa-li fab fa-github-alt\"></i> 3D Origami</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Reading</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Watching LinkedIn Learning</li>",
-        "interestsHeading": "Interests",
-        "interests": "<li><i class=\"fa-li fab fa-github-alt\"></i> Networking</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Data Science</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Programming</li>"
-    },
-    "Contact":
-    {
-        "heading": "Contact Us",
-        "firstNameLabel": "First Name",
-        "firstNamePlaceholder": "Enter your First name",
-        "lastNameLabel": "Last Name",
-        "lastNamePlaceholder": "Enter your Last name",
-        "contactNumLabel": "Contact Number",
-        "contactNumPlaceholder": "Enter your Contact Number",
-        "emailAddressLabel": "Email Address",
-        "emailAddressPlaceholder": "Enter your email address",
-        "shortMessageLabel": "Your message",
-        "shortMessagePlaceholder": "Type in anything you would like to let me know...",
-        "sendButton": "<i class=\"fas fa-envelope-square\"></i> Send",
-        "resetButton": "<i class=\"fas fa-comment-slash\"></i> Reset"
-    }
+   "myContent":
+    [
+        {
+            "heading": "About me",
+            "introText": "I am a high school graduate aspiring to be a software engineer who enjoys coding. At Centennial, I am a student of the Software Engineering Technician Program. My interests include reading, watching Youtube and listening music.",
+            "missionHeading": "Mission Statement",
+            "missionStatement": "Strive to be a good software engineer who never stops learning and spreading knowledge",
+            "hobbiesHeading": "Hobbies",
+            "hobbies": "<li><i class=\"fa-li fab fa-github-alt\"></i> 3D Origami</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Reading</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Watching LinkedIn Learning</li>",
+            "interestsHeading": "Interests",
+            "interests": "<li><i class=\"fa-li fab fa-github-alt\"></i> Networking</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Data Science</li>        <li><i class=\"fa-li fab fa-github-alt\"></i> Programming</li>"
+        },
+        {
+            "heading": "Contact Us",
+            "firstNameLabel": "First Name",
+            "firstNamePlaceholder": "Enter your First name",
+            "lastNameLabel": "Last Name",
+            "lastNamePlaceholder": "Enter your Last name",
+            "contactNumLabel": "Contact Number",
+            "contactNumPlaceholder": "Enter your Contact Number",
+            "emailAddressLabel": "Email Address",
+            "emailAddressPlaceholder": "Enter your email address",
+            "shortMessageLabel": "Your message",
+            "shortMessagePlaceholder": "Type in anything you would like to let me know...",
+            "sendButton": "<i class=\"fas fa-envelope-square\"></i> Send",
+            "resetButton": "<i class=\"fas fa-comment-slash\"></i> Reset"
+        },
+        {
+            "heading": "Projects",
+            "project1Heading": "3D Origami",
+            "project1Text": "One of my favourite activities is to sit by folding the units of paper required for these items (shown on the left) and lose track of time doing this.This work makes me feel rested and calm and I enjoy spending hours with it. What is done to build these structures is quite a fun process. First, the 3D triangular paper units are folded in the required amount (an approximate). Then a base is built connecting the tips of the units built earlier into pockets of others with glue forming two layers of these units connected in a nice, circular fashion. Units are added onto this base layer by layer and with multiple bases forming these cute, modular structures.",
+            "project2Heading": "Quiz competitions",
+            "project2Text": "I enjoy participating in quiz competitions and have participated in many to my best. Participation in quizzes always pays off, whether you win or lose and that's something I have come to adore about these competitions. I have travelled to various parts of Saudi Arabia including Jubail, Dammam, Al Khobar etc. One learns something new for every quiz competition attended, and knowledge is a priceless treasure.",
+            "project3Heading": "Travel",
+            "project3Text": "I also enjoy travelling. I was born and brought up in Saudi Arabia for the whole of my life. I have travelled to various parts of India, which is my home country, including Dhanushkodi, Rameswaram and Madurai which are famous for their cultural and historical heritage. Shown on the left is an image of the \"Gopuram\" of the Madurai Meenakshi Temple which includes more than a thousand sculptures and the temple has nine of these in total accounting for a rich collection of dazzling sculptures."
+        }
+    ]
 }
